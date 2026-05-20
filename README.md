@@ -33,33 +33,21 @@ npm run build:rules
 
 This regenerates `public/rules.json` for the Rule Reference and Changelog tabs.
 
-## GitHub Pages Deployment
+## Repository
 
-This repo is ready for GitHub Pages.
-
-Recommended repository name:
+Recommended repository:
 
 ```text
-vex-iq-level-up-toolkit
+VectorMotionX1/level-up-toolkit
 ```
 
-After pushing to GitHub:
-
-1. Open the repository settings.
-2. Go to `Pages`.
-3. Set `Build and deployment` source to `GitHub Actions`.
-4. Run the `Deploy GitHub Pages` workflow, or push to `main`.
-
-The site URL will look like:
+This repo is source code for the toolkit. The main website lives in:
 
 ```text
-https://<github-username>.github.io/vex-iq-level-up-toolkit/
+VectorMotionX1/vectormotionx1.github.io
 ```
 
-If you do not want your GitHub username in the URL, use either:
-
-- a better GitHub organization name, such as a team/club name
-- a custom domain, such as `levelup.yourteam.org`
+If you want to publish this toolkit under the main site later, copy or build the static `public/` files into a subfolder of the main website repo.
 
 ## Automatic Manual Updates
 
