@@ -6,6 +6,10 @@ on:
       - main
     paths:
       - public/**
+      - index.html
+      - app.js
+      - styles.css
+      - rules.json
       - .github/workflows/deploy-pages.yml
   workflow_dispatch:
 
@@ -39,4 +43,3 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
-
