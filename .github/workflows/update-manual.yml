@@ -1,8 +1,6 @@
 name: Update Manual Data
 
 on:
-  schedule:
-    - cron: "24 10 * * *"
   workflow_dispatch:
 
 permissions:
@@ -44,4 +42,3 @@ jobs:
           git add public/rules.json
           git commit -m "Update VEX IQ manual quick reference"
           git push
-

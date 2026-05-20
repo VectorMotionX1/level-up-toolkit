@@ -47,7 +47,11 @@ This repo is source code for the toolkit. The main website lives in:
 VectorMotionX1/vectormotionx1.github.io
 ```
 
-If you want to publish this toolkit under the main site later, copy or build the static `public/` files into a subfolder of the main website repo.
+GitHub Pages publishes this repo as:
+
+```text
+https://vectormotionx1.github.io/level-up-toolkit/
+```
 
 ## Automatic Manual Updates
 
