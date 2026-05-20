@@ -299,7 +299,7 @@ function renderChangelog() {
 }
 
 async function loadRules() {
-  const response = await fetch("/rules.json");
+  const response = await fetch("rules.json");
   if (!response.ok) {
     rulesMeta.textContent = "Run npm run build:rules to generate the Quick Reference Guide.";
     return;
