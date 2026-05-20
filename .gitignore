@@ -1,0 +1,9 @@
+node_modules/
+.env
+data/*.pdf
+data/*.json
+public/manual.pdf
+public/manual-data.json
+uploads/
+artifacts/
+.DS_Store

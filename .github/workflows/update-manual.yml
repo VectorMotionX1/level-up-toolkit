@@ -1,0 +1,47 @@
+name: Update Manual Data
+
+on:
+  schedule:
+    - cron: "24 10 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download official manual
+        run: |
+          mkdir -p data
+          curl -L "https://link.vex.com/docs/26-27/viqrc/game-manual" -o data/manual.pdf
+
+      - name: Rebuild quick reference and changelog
+        run: npm run build:rules
+
+      - name: Commit updated data
+        run: |
+          if git diff --quiet -- public/rules.json; then
+            echo "No manual quick-reference changes detected."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/rules.json
+          git commit -m "Update VEX IQ manual quick reference"
+          git push
+
